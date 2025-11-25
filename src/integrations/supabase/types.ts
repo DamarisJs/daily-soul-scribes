@@ -14,7 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      devotionals: {
+        Row: {
+          created_at: string | null
+          day_number: number
+          id: string
+          reflection: string
+          scripture_reference: string
+          scripture_text: string
+          title: string
+        }
+        Insert: {
+          created_at?: string | null
+          day_number: number
+          id?: string
+          reflection: string
+          scripture_reference: string
+          scripture_text: string
+          title: string
+        }
+        Update: {
+          created_at?: string | null
+          day_number?: number
+          id?: string
+          reflection?: string
+          scripture_reference?: string
+          scripture_text?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      reflections: {
+        Row: {
+          content: string
+          created_at: string | null
+          id: string
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          id?: string
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
